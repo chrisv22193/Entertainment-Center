@@ -30,7 +30,8 @@ export default function SimpleBottomNavigation() {
 
   return (
     <Box>
-      <BottomNavigation
+      <BottomNavigation 
+        onClick={() => window.scroll(0,0)}
         showLabels
         value={value}
         onChange={(event, newValue) => {
@@ -38,7 +39,7 @@ export default function SimpleBottomNavigation() {
         }}
         sx={{
             "&":{
-                width: 100 + "%",
+                width: "100%",
                 position: "fixed",
                 bottom: 0,
                 backgroundColor: "#2c2c35",
@@ -46,7 +47,7 @@ export default function SimpleBottomNavigation() {
             }
           }}
       >
-        <BottomNavigationAction 
+        <BottomNavigationAction
             style={{ color: "white" }}
             label="Trending" 
             icon={<WhatshotIcon />} 

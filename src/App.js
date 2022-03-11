@@ -7,7 +7,7 @@ import SimpleBottomNavigation from './components/MainNav';
 import Movies from './Pages/Movies/Movies';
 import Search from './Pages/Search/Search';
 import Trending from './Pages/Trending/Trending';
-import TV from './Pages/TV/TV';
+import TV from './Pages/TV_Series/TV_Series';
 
 function App() {
   return (
