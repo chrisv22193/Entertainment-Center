@@ -4,7 +4,7 @@ import SearchIcon from "@mui/icons-material/Search"
 
 const Search = () => {
 
-  const [type, settype] = useState(0)
+  const [type, setType] = useState(0)
 
   const darkTheme = createTheme({
     palette:{
@@ -32,8 +32,8 @@ const Search = () => {
         </div>
 
         <Tabs value={type} indicatorColor='primary' textColor='primary'>
-          <Tab style={{width: "50%" }} label="Search Movies"/>
-          <Tab style={{width: "50%" }} label="Search TV Series"/>
+          <Tab style={{ width: "50%" }} label="Search Movies"/>
+          <Tab style={{ width: "50%" }} label="Search TV Series"/>
         </Tabs>
 
       </ThemeProvider>

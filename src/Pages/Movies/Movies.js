@@ -31,6 +31,7 @@ useEffect(() => {
   return (
     <div>
         <span className='pageTitle'>Movies</span>
+        <span className='filterText' style={{padding: 5}}>Filter by genre</span>
         <Genres
           type="movie"
           selectedGenres={seletedGenres}

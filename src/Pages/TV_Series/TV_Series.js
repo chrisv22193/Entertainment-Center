@@ -30,6 +30,7 @@ useEffect(() => {
   return (
     <div>
         <span className='pageTitle'>TV Series</span>
+        <span className='filterText' style={{padding: 5}}>Filter by genre</span>
         <Genres
           type="tv"
           selectedGenres={seletedGenres}

@@ -6,7 +6,7 @@
     min-height: 100vh;
     background-color: #393944;
     color: white;
-    padding-top: 130px;
+    padding-top: 85px;
     padding-bottom: 70px;
 }
 
@@ -23,6 +23,7 @@
     font-family: "Montserrat", sans-serif;
     font-size: 2vw;
     padding: 4px;
+    padding-bottom: 10px;
     border-radius: 50px;
     color: white;
 }
