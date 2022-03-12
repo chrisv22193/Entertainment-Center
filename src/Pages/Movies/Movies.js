@@ -3,6 +3,7 @@ import React, { useEffect, useState } from 'react'
 import Genres from '../../components/Genres';
 import CustomPagination from '../../components/Pagination/CustomPagination';
 import SingleContent from '../../components/SingleContent/SingleContent';
+import useGenre from '../../Hooks/useGenre';
 
 const Movies = () => {
 
@@ -11,10 +12,11 @@ const Movies = () => {
   const [numOfPages, setNumOfPages] = useState()
   const [seletedGenres, setSeletedGenres] = useState([])
   const [genres, setGenres] = useState([])
+  const genreforURL = useGenre(seletedGenres)
 
   const fetchMovies=async () => {
      const { data } = await axios.get(
-       `https://api.themoviedb.org/3/discover/movie?api_key=${process.env.REACT_APP_API_KEY}&language=en-US&sort_by=popularity.desc&include_adult=false&include_video=false&page=${page}&with_watch_monetization_types=flatrate&with`
+       `https://api.themoviedb.org/3/discover/movie?api_key=${process.env.REACT_APP_API_KEY}&language=en-US&sort_by=popularity.desc&include_adult=false&include_video=false&page=${page}&with_watch_monetization_types=flatrate&with&with_genres=${genreforURL}`
       );
 
       setContent(data.results)
@@ -23,7 +25,7 @@ const Movies = () => {
 
 useEffect(() => {
   fetchMovies()
-}, [page]);
+}, [page, genreforURL]);
 
 
   return (
@@ -31,8 +33,8 @@ useEffect(() => {
         <span className='pageTitle'>Movies</span>
         <Genres
           type="movie"
-          seletedGenres={seletedGenres}
-          setSeletedGenres={setSeletedGenres}
+          selectedGenres={seletedGenres}
+          setSelectedGenres={setSeletedGenres}
           genres={genres}
           setGenres={setGenres}
           setPage={setPage}
