@@ -48,7 +48,7 @@ useEffect(() => {
               poster={c.poster_path} 
               title={c.title || c.name}
               date={c.first_air_date || c.release_date} 
-              media_type="movies"
+              media_type="movie"
               vote_average={c.vote_average}
               />
           ))}
