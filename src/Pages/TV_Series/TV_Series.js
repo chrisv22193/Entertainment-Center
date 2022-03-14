@@ -25,6 +25,7 @@ const TV_Series = () => {
 
 useEffect(() => {
   fetchTVSeries()
+  // eslint-disable-next-line react-hooks/exhaustive-deps
 }, [page, genreforURL]);
 
   return (

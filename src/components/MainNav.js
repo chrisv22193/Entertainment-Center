@@ -1,4 +1,4 @@
-import * as React from 'react';
+import React, { useEffect } from 'react';
 import Box from '@mui/material/Box';
 import BottomNavigation from '@mui/material/BottomNavigation';
 import BottomNavigationAction from '@mui/material/BottomNavigationAction';
@@ -12,7 +12,7 @@ export default function SimpleBottomNavigation() {
   const [value, setValue] = React.useState(0);
   const navigate = useNavigate();
 
-  React.useEffect(() => {
+  useEffect(() => {
     if(value === 0){
       navigate('/')
     }
@@ -25,6 +25,7 @@ export default function SimpleBottomNavigation() {
     else if(value === 3){
       navigate('/search')
     }
+    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [value])
   
 

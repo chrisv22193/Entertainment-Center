@@ -34,10 +34,10 @@ const Genres = ({
 
     useEffect(() => {
         fetchGenres();
-
         return () => {
             setGenres({});
         }
+        // eslint-disable-next-line react-hooks/exhaustive-deps
     }, [])
     
     
