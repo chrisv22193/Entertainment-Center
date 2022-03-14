@@ -6,6 +6,8 @@ import Button from '@mui/material/Button';
 import { makeStyles } from '@mui/styles'
 import axios from 'axios';
 import { img_500, unavailable, unavailableLandscape } from '../../Config/config';
+import { ConstructionOutlined, YouTube } from '@mui/icons-material';
+import "./ContentModal.css"
 
 const useStyles = makeStyles((theme) => ({
     modal: {
@@ -16,7 +18,7 @@ const useStyles = makeStyles((theme) => ({
     paper: {
       width: "90%",
       height: "80%",
-      backgroundColor: "#39445a",
+      backgroundColor: "#393944",
       border: "1px solid #282c34",
       borderRadius: 10,
       color: "white",
@@ -37,7 +39,6 @@ export default function ContentModal({children, media_type, id}) {
         const { data } = await axios.get(
             `https://api.themoviedb.org/3/${media_type}/${id}?api_key=${process.env.REACT_APP_API_KEY}&language=en-US`
         )
-        console.log(data);
         setContent(data)
     }
 
@@ -45,7 +46,7 @@ export default function ContentModal({children, media_type, id}) {
         const { data } = await axios.get(
             `https://api.themoviedb.org/3/${media_type}/${id}/videos?api_key=${process.env.REACT_APP_API_KEY}&language=en-US`
         )
-        setVideo(data.results)
+        setVideo(data.results[0]?.key)
     }
 
     useEffect(() => {
@@ -55,8 +56,8 @@ export default function ContentModal({children, media_type, id}) {
     
 
   return (
-    <div>
-      <Button className='media' onClick={handleOpen}>{children}</Button>
+    <>
+      <div className='media' onClick={handleOpen}>{children}</div>
         <Modal
             aria-labelledby="transition-modal-title"
             aria-describedby="transition-modal-description"
@@ -72,14 +73,14 @@ export default function ContentModal({children, media_type, id}) {
         <Fade in={open}>
             {content && (
                 <div className={classes.paper}>
-                    <div className="ContentModal">
-                        {/* <img
+                    <div className="contentModal">
+                        <img
                             alt={content.name || content.title} 
                             className='contentModal_portrait'
                             src={content.poster_path
                                 ?`${img_500}/${content.poster_path}` 
                                 : unavailable}
-                        /> */}
+                        />
                         <img
                             alt={content.name || content.title} 
                             className='contentModal_landscape'
@@ -97,19 +98,28 @@ export default function ContentModal({children, media_type, id}) {
                                     ).substring(0,4)}
                                 )
                             </span>
+                            {content.tagline && (
+                                <i className="tagline">{content.tagline}</i>
+                            )}
                             <span className='contentModal_overview'>
-                                {content.name || content.title}(
-                                    {(
-                                        content.overview
-                                    )}
-                                )
+                                {content.overview}
                             </span>
+                            <div></div>
+                            <Button
+                                variant='contained'
+                                startIcon={<YouTube/>}
+                                color="error"
+                                target="_blank"
+                                href={`http://www.youtube.com/watch?v=${video}`}
+                            >
+                                <b>Watch the Trailer</b>
+                            </Button>
                         </div>
                     </div>
                 </div>
             )}
         </Fade>
       </Modal>
-    </div>
+    </>
   );
 }

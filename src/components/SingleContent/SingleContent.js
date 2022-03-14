@@ -1,8 +1,16 @@
 import { Badge } from '@mui/material';
+import { makeStyles } from '@mui/styles';
 import React from 'react'
 import { img_300, unavailable } from "../../Config/config"
 import ContentModal from '../ContentModal/ContentModal';
 import "./SingleContent.css";
+
+const useStyles = makeStyles((theme) => ({
+  badge:{
+    fontWeight: "bold",
+    fontSize: "14px",
+  }
+}))
 
 const SingleContent = ({
     id,
@@ -12,9 +20,11 @@ const SingleContent = ({
     media_type,
     vote_average,
 }) => {
+const classes = useStyles()
+
   return (
     <ContentModal media_type={media_type} id={id}>
-        <Badge badgeContent={vote_average} color={vote_average > 6 ? "primary" : "error"} />
+        <Badge classes={{ badge: classes.badge }} badgeContent={vote_average} color={vote_average > 6 ? "primary" : "error"}/>
         <img 
             className='poster' 
             src={ poster? `${img_300}/${poster}` : unavailable }  
