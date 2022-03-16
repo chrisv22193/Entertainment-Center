@@ -42,16 +42,17 @@
 }
 
 .contentModal_title {
-  height: 12%;
+  height: auto;
   font-size: 5vw;
   display: flex;
+  text-align: center;
   align-items: center;
   justify-content: center;
 }
 
 .contentModal_overview {
   display: flex;
-  height: 40%;
+  height: auto;
   overflow-y: scroll;
   padding: 15px;
   border-radius: 20px;
@@ -71,12 +72,12 @@
   .contentModal_portrait {
     display: flex;
     width: 38%;
-    height: 95%;
+    height: 100%;
   }
   .contentModal {
     flex-direction: row;
     justify-content: space-around;
-    padding: 10px 0;
+    overflow-y: scroll;
   }
   .contentModal_about {
     width: 58%;

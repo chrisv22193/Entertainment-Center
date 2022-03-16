@@ -1,12 +1,13 @@
 import React, { useEffect, useState } from 'react';
-import Backdrop from '@mui/material/Backdrop';
+// import Backdrop from '@mui/material/Backdrop';
 import Modal from '@mui/material/Modal';
 import Fade from '@mui/material/Fade';
 import Button from '@mui/material/Button';
 import { makeStyles } from '@mui/styles'
 import axios from 'axios';
 import { img_500, unavailable, unavailableLandscape } from '../../Config/config';
-import { ConstructionOutlined, YouTube } from '@mui/icons-material';
+import { YouTube } from '@mui/icons-material';
+import Carousel from "../Carousel/Carousel"
 import "./ContentModal.css"
 
 const useStyles = makeStyles((theme) => ({
@@ -17,13 +18,13 @@ const useStyles = makeStyles((theme) => ({
     },
     paper: {
       width: "90%",
-      height: "80%",
+      height: "85%",
       backgroundColor: "#393944",
       border: "1px solid #282c34",
       borderRadius: 10,
       color: "white",
       boxShadow: 5,
-      spacing: [1, 1, 3],
+      padding: 10,
     },
 }));
 
@@ -52,7 +53,7 @@ export default function ContentModal({children, media_type, id}) {
     useEffect(() => {
       fetchData()
       fetchVideo()
-      // eslint-disable-next-line react-hooks/exhaustive-deps
+      // eslint-disable-next-line 
     }, [])
     
 
@@ -105,7 +106,12 @@ export default function ContentModal({children, media_type, id}) {
                             <span className='contentModal_overview'>
                                 {content.overview}
                             </span>
-                            <div></div>
+                            <div>
+                                <Carousel 
+                                    media_type={media_type}
+                                    id={id}
+                                />
+                            </div>
                             <Button
                                 variant='contained'
                                 startIcon={<YouTube/>}
