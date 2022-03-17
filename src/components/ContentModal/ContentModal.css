@@ -44,6 +44,7 @@
 .contentModal_title {
   height: auto;
   font-size: 5vw;
+  font-weight: bold;
   display: flex;
   text-align: center;
   align-items: center;

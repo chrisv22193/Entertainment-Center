@@ -5,7 +5,7 @@ import Fade from '@mui/material/Fade';
 import Button from '@mui/material/Button';
 import { makeStyles } from '@mui/styles'
 import axios from 'axios';
-import { img_500, unavailable, unavailableLandscape } from '../../Config/config';
+import { img_500, unavailable } from '../../Config/config';
 import { YouTube } from '@mui/icons-material';
 import Carousel from "../Carousel/Carousel"
 import "./ContentModal.css"
