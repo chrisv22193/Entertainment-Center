@@ -40,31 +40,35 @@ export default function SimpleBottomNavigation() {
         }}
         sx={{
             "&":{
-                width: "100%",
-                position: "fixed",
-                bottom: 0,
-                backgroundColor: "#2c2c35",
-                zIndex: 100,
+              width: "100%",
+              position: "fixed",
+              bottom: 0,
+              backgroundColor: "#212127",
+              zIndex: 100,
+            },
+            "& .Mui-selected, .Mui-selected > svg":{
+              color: "white",
+              fontWeight: "bold"
             }
           }}
       >
         <BottomNavigationAction
-            style={{ color: "white" }}
+            style={{ color: "gray", fontWeight:"bold" }}
             label="Trending" 
             icon={<WhatshotIcon />} 
         />
         <BottomNavigationAction 
-            style={{ color: "white" }}
+            style={{ color: "gray", fontWeight:"bold" }}
             label="Movies" 
             icon={<MovieIcon />} 
         />
         <BottomNavigationAction 
-            style={{ color: "white" }}
+            style={{ color: "gray", fontWeight:"bold" }}
             label="TV Series" 
             icon={<TvIcon />} 
         />
         <BottomNavigationAction 
-            style={{ color: "white" }}
+            style={{ color: "gray", fontWeight:"bold" }}
             label="Search" 
             icon={<SearchIcon />} 
         />

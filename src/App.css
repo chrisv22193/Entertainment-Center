@@ -28,7 +28,7 @@
     }
 
     .pageTitle{
-        font-size: 5.5vw;
+        font-size: 5vw;
     }
 }
 
@@ -37,7 +37,7 @@
         padding-top: 70px;
     }
     .pageTitle{
-        font-size: 5vw;
+        font-size: 4.5vw;
     }
 }
 
@@ -47,7 +47,7 @@
     }
 
     .pageTitle{
-        font-size: 4.5vw;
+        font-size: 4vw;
     }
 }
 
@@ -57,7 +57,7 @@
     }
 
     .pageTitle{
-        font-size: 4vw;
+        font-size: 3.5vw;
     }
 }
 
@@ -67,7 +67,7 @@
     }
 
     .pageTitle{
-        font-size: 3.5vw;
+        font-size: 3vw;
     }
 }
 
@@ -77,6 +77,6 @@
     }
 
     .pageTitle{
-        font-size: 3.5vw;
+        font-size: 2.5vw;
     }
 }

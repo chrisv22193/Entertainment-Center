@@ -24,7 +24,8 @@ const classes = useStyles()
 
   return (
     <ContentModal media_type={media_type} id={id}>
-        <Badge classes={{ badge: classes.badge }} badgeContent={vote_average} color={vote_average > 6 ? "primary" : "error"}/>
+        <Badge 
+          classes={{ badge: classes.badge }} badgeContent={vote_average} color={vote_average >= 8  ? "success" : "primary" }/>
         <img 
             className='poster' 
             src={ poster? `${img_300}/${poster}` : unavailable }  
