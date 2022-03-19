@@ -32,6 +32,7 @@ export default function SimpleBottomNavigation() {
   return (
     <Box>
       <BottomNavigation 
+        className='BottomNavigation'
         onClick={() => window.scroll(0,0)}
         showLabels
         value={value}

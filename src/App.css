@@ -30,6 +30,10 @@
     .pageTitle{
         font-size: 5vw;
     }
+    
+    .BottomNavigation{
+        padding-bottom: 20px;
+    }
 }
 
 @media only screen and (min-width: 600px){
