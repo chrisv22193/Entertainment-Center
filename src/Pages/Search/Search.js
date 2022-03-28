@@ -10,6 +10,7 @@ const Search = () => {
   const [type, setType] = useState(0)
   const [page, setPage] = useState(1)
   const [searchText, setSearchText] = useState("")
+  const [suggestions, setSuggestions] = useState([])
   const [content, setContent] = useState()
   const [numOfPages, setNumOfPages] = useState()
 
@@ -49,6 +50,7 @@ const Search = () => {
             variant="filled"
             onChange={(e) => setSearchText(e.target.value)}
           />
+          <div>{}</div>
           <Button 
             variant='contained' 
             style={{marginLeft: 10}} 
