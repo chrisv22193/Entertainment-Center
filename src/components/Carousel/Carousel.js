@@ -29,9 +29,6 @@ const Carousel = ({ media_type, id }) => {
     512:{
       items: 5,
     },
-    992:{
-      items: 6,
-    },
     1024:{
       items: 7,
     },
