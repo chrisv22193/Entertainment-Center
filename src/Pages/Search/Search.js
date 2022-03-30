@@ -49,6 +49,7 @@ const Search = () => {
             variant="filled"
             onChange={(e) => setSearchText(e.target.value)}
           />
+          <div>{}</div>
           <Button 
             variant='contained' 
             style={{marginLeft: 10}} 
